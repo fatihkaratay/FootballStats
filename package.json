@@ -13,7 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/node": "^13.7.4",
-    "@types/core-js": "0.9.35",
+    "@types/core-js": "0.9.39",
     "concurrently": "^5.1.0",
     "nodemon": "^2.0.2"
   }
