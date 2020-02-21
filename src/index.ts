@@ -1,1 +1,1 @@
-console.log('Hello, this is a test application');
+import fs from 'fs';
