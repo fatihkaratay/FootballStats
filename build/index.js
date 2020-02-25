@@ -2,11 +2,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var MatchResult_1 = require("./MatchResult");
 var MatchReader_1 = require("./MatchReader");
-var reader = new MatchReader_1.MatchReader('football.csv');
-reader.read();
-console.log(reader.data[0][0]);
+var CsvFileReader_1 = require("./CsvFileReader");
+// create and onject that satidsfies the 'DataReader' interface
+var csvFileReader = new CsvFileReader_1.CsvFileReader('football.csv');
+// create and instance of MarchReader and pass in somethins satisfying
+// the 'DataReader' interface
+var matchReader = new MatchReader_1.MatchReader(csvFileReader);
+matchReader.load();
+// matchReader.mactches
 var manUnitedWins = 0;
-for (var _i = 0, _a = reader.data; _i < _a.length; _i++) {
+for (var _i = 0, _a = matchReader.matches; _i < _a.length; _i++) {
     var match = _a[_i];
     if (match[1] === 'Man United' && match[5] === MatchResult_1.MatchResult.HomeWin) {
         manUnitedWins++;
